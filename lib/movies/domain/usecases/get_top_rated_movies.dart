@@ -9,6 +9,7 @@ class GetTopRatedMovies extends BaseUseCase<List<Movie>> {
 
   GetTopRatedMovies(this.baseMovieRepositroty);
 
+  @override
   Future<Either<GeneralError, List<Movie>>> call() => baseMovieRepositroty.getTopRatedMoviews();
 }
  

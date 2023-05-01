@@ -9,6 +9,7 @@ class GetNowPlayingMovies extends BaseUseCase<List<Movie>> {
 
   GetNowPlayingMovies(this.baseMovieRepositroty);
 
+  @override
   Future<Either<GeneralError, List<Movie>>> call() =>
       baseMovieRepositroty.getNowPlayingMovies();
 }
