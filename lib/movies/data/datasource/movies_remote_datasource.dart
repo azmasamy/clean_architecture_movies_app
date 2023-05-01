@@ -20,4 +20,16 @@ class MoviesRemoteDatasource implements BaseMoviesRemoteDatasource {
           RemoteDatasourceError.fromJson(response.data));
     }
   }
+
+    Future<List<MovieModel>> getMovieById(String id) async {
+    String url = '$baseUrl/movie/$id?api_key=$apiKey';
+    final response = await Dio().get(url);
+    if (response.statusCode == 200) {
+      return List<MovieModel>.from(
+          response.data['results'].map((json) => MovieModel.fromJson(json)));
+    } else {
+      throw RemoteDatasourceException(
+          RemoteDatasourceError.fromJson(response.data));
+    }
+  }
 }

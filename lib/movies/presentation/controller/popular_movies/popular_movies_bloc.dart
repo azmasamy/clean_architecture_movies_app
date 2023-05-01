@@ -15,7 +15,7 @@ class PopularMoviesBloc extends Bloc<PopularMoviesEvent, PopularMoviesState> {
 
   FutureOr<void> _onLoadPopularMovies(
       PopularMoviesEvent event, Emitter<PopularMoviesState> emit) async {
-    final result = await getPopularMovies.execute();
+    final result = await getPopularMovies();
     result.fold((l) => emit(PopularMoviesError(remoteDatasourceError: l)),
         (r) => emit(PopularMoviesSuccess(popularMovies: r)));
   }

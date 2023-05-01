@@ -18,7 +18,7 @@ class TopRatedMoviesBloc
 
   FutureOr<void> _onLoadTopRatedMovies(
       TopRatedMoviesEvent event, Emitter<TopRatedMoviesState> emit) async {
-    final result = await getTopRatedMovies.execute();
+    final result = await getTopRatedMovies();
     result.fold((l) => emit(TopRatedMoviesError(remoteDatasourceError: l)),
         (r) => emit(TopRatedMoviesSuccess(topRatedMovies: r)));
   }

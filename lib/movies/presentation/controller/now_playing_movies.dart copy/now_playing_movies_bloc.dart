@@ -20,7 +20,7 @@ class NowPlayingMoviesBloc
 
   FutureOr<void> _onLoadNowPlayingMovies(
       NowPlayingMoviesEvent event, Emitter<NowPlayingMoviesState> emit) async {
-    final result = await getNowPlayingMovies.execute();
+    final result = await getNowPlayingMovies();
     result.fold((l) => emit(NowPlayingMoviesError(remoteDatasourceError: l)),
         (r) => emit(NowPlayingMoviesSuccess(nowPlayingMovies: r)));
   }
