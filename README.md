@@ -9,9 +9,9 @@ A Flutter movies app that uses https://www.themoviedb.org/ api to get movies inf
 # Screenshots
 
 <span>
+<img src="https://user-images.githubusercontent.com/34034904/235736330-fe790ff8-1100-4e10-99da-58122052e06c.jpg" width="225">
 <img src="https://user-images.githubusercontent.com/34034904/235736318-c3cfc4cd-d9bf-4bce-a414-0ef1478c49cd.jpg" width="225">
 <img src="https://user-images.githubusercontent.com/34034904/235736334-10be9c55-c39f-4486-9e17-fe09e2594a46.jpg" width="225">
-<img src="https://user-images.githubusercontent.com/34034904/235736330-fe790ff8-1100-4e10-99da-58122052e06c.jpg" width="225">
 <img src="https://user-images.githubusercontent.com/34034904/235736345-5e22b058-4f18-4069-b5a5-93afc668f1f7.jpg" width="225">
 </span>
 
