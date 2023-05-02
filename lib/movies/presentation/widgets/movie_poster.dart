@@ -5,9 +5,13 @@ import 'package:shimmer/shimmer.dart';
 
 class MoviePoster extends StatelessWidget {
   final String backdropPath;
+  final double height;
+  final double width;
   const MoviePoster({
     super.key,
     required this.backdropPath,
+    this.height = 170.0,
+    this.width = 120,
   });
 
   @override
@@ -15,7 +19,10 @@ class MoviePoster extends StatelessWidget {
     return ClipRRect(
       borderRadius: const BorderRadius.all(Radius.circular(4.0)),
       child: CachedNetworkImage(
-        width: 120,
+        width: width,
+        height: height,
+        errorWidget: (context, url, error) => const Icon(Icons.error),
+        fit: BoxFit.cover,
         imageUrl: apiImagesBaseUrl + backdropPath,
         placeholder: (context, url) => Shimmer.fromColors(
           baseColor: Colors.grey[850]!,
@@ -29,9 +36,6 @@ class MoviePoster extends StatelessWidget {
             ),
           ),
         ),
-        errorWidget: (context, url, error) => const Icon(Icons.error),
-        height: 180.0,
-        fit: BoxFit.cover,
       ),
     );
   }

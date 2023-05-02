@@ -5,6 +5,8 @@ import 'package:clean_architecture_movies_app/core/services/service_locator.dart
 import 'package:clean_architecture_movies_app/movies/domain/entities/genres.dart';
 import 'package:clean_architecture_movies_app/movies/domain/entities/movie_details.dart';
 import 'package:clean_architecture_movies_app/movies/presentation/controller/movie_recommendations/movie_recommendations_bloc.dart';
+import 'package:clean_architecture_movies_app/movies/presentation/widgets/movie_rating.dart';
+import 'package:clean_architecture_movies_app/movies/presentation/widgets/movie_release_year.dart';
 import 'package:clean_architecture_movies_app/movies/presentation/widgets/recommendations_grid.dart';
 import 'package:clean_architecture_movies_app/movies/presentation/widgets/recommendations_grid_loading.dart';
 import 'package:flutter/material.dart';
@@ -70,40 +72,11 @@ class MovieDetailsContent extends StatelessWidget {
                   const SizedBox(height: 8.0),
                   Row(
                     children: [
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 2.0,
-                          horizontal: 8.0,
-                        ),
-                        decoration: BoxDecoration(
-                          color: Colors.grey[800],
-                          borderRadius: BorderRadius.circular(4.0),
-                        ),
-                        child: Text(
-                          movieDetails.releaseDate.split('-')[0],
-                          style: const TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ),
+                      MovieReleaseDate(releaseDate: movieDetails.releaseDate),
                       const SizedBox(width: 16.0),
                       Row(
                         children: [
-                          const Icon(
-                            Icons.star,
-                            color: Colors.amber,
-                            size: 20.0,
-                          ),
-                          const SizedBox(width: 4.0),
-                          Text(
-                            (movieDetails.voteAverage / 2).toStringAsFixed(1),
-                            style: const TextStyle(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.w500,
-                              letterSpacing: 1.2,
-                            ),
-                          ),
+                          MovieRating(rating: movieDetails.voteAverage),
                           const SizedBox(width: 4.0),
                           Text(
                             '(${movieDetails.voteAverage})',

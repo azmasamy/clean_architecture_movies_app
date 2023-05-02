@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 ThemeData lightThemeData(BuildContext context) {
   return ThemeData.light().copyWith(
       primaryColor: ColorConstants.kPrimaryColor,
-      scaffoldBackgroundColor: ColorConstants.kPrimaryBackgroundColor,
+      scaffoldBackgroundColor: ColorConstants.kPrimaryColor,
       appBarTheme: appBarTheme,
       progressIndicatorTheme: progressIndicatorThemeData,
       iconTheme: iconThemeData,
@@ -20,8 +20,7 @@ ThemeData lightThemeData(BuildContext context) {
           thumbVisibility: MaterialStateProperty.all(true),
           trackVisibility: MaterialStateProperty.all(false),
           thickness: MaterialStateProperty.all(4),
-          thumbColor:
-              MaterialStateProperty.all(ColorConstants.kPrimaryBackgroundColor),
+          thumbColor: MaterialStateProperty.all(ColorConstants.kPrimaryColor),
           trackColor:
               MaterialStateProperty.all(ColorConstants.kSecondaryColorAccent),
           mainAxisMargin: 20,
@@ -41,11 +40,12 @@ AppBarTheme appBarTheme = const AppBarTheme(
     elevation: 0,
     backgroundColor: ColorConstants.kTransparentColor);
 
-BottomNavigationBarThemeData bottomNavigationBar = BottomNavigationBarThemeData(
-  backgroundColor: ColorConstants.kPrimaryBackgroundColor,
+BottomNavigationBarThemeData bottomNavigationBar =
+    const BottomNavigationBarThemeData(
+  backgroundColor: ColorConstants.kPrimaryColor,
   selectedItemColor: ColorConstants.kSecondaryColor,
   unselectedItemColor: ColorConstants.kSecondaryColor,
-  selectedIconTheme: const IconThemeData(color: ColorConstants.kPrimaryColor),
+  selectedIconTheme: IconThemeData(color: ColorConstants.kPrimaryColor),
   showUnselectedLabels: true,
 );
 
@@ -59,8 +59,11 @@ final CardTheme cardTheme = CardTheme(
 ExpansionTileThemeData expansionTileTheme = const ExpansionTileThemeData(
     collapsedIconColor: ColorConstants.kSecondaryColor);
 
-TextTheme textTheme = const TextTheme()
-    .apply(displayColor: Colors.white, bodyColor: Colors.white);
+TextTheme textTheme = const TextTheme().apply(
+  displayColor: Colors.white,
+  bodyColor: Colors.white,
+  decorationColor: Colors.white,
+);
 
 ColorScheme colorScheme = const ColorScheme.dark().copyWith(
   primary: ColorConstants.kPrimaryColor,
