@@ -1,7 +1,7 @@
-import 'package:clean_architecture_movies_app/movies/presentation/controller/now_playing_movies.dart%20copy/now_playing_movies_bloc.dart';
+import 'package:clean_architecture_movies_app/movies/presentation/controller/now_playing_movies/now_playing_movies_bloc.dart';
 import 'package:clean_architecture_movies_app/movies/presentation/controller/popular_movies/popular_movies_bloc.dart';
 import 'package:clean_architecture_movies_app/movies/presentation/controller/popular_movies/popular_movies_state.dart';
-import 'package:clean_architecture_movies_app/movies/presentation/controller/top_rated_movies.dart/top_rated_movies_bloc.dart';
+import 'package:clean_architecture_movies_app/movies/presentation/controller/top_rated_movies/top_rated_movies_bloc.dart';
 import 'package:clean_architecture_movies_app/movies/presentation/widgets/movies_carousel.dart';
 import 'package:clean_architecture_movies_app/movies/presentation/widgets/movies_carousel_loading.dart';
 import 'package:clean_architecture_movies_app/movies/presentation/widgets/movies_horizontal_list.dart';

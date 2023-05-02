@@ -9,6 +9,7 @@ class MovieModel extends Movie {
     required super.overview,
     required super.voteAverage,
     required super.releaseDate,
+    required super.isAdult,
   });
 
   factory MovieModel.fromJson(Map<String, dynamic> json) => MovieModel(
@@ -17,7 +18,8 @@ class MovieModel extends Movie {
         backdropPath: json['backdrop_path'],
         genreIds: List<int>.from(json['genre_ids'].map((genreId) => genreId)),
         overview: json['overview'],
-        voteAverage: json['vore_avarage'],
+        voteAverage: json['vote_average'].toDouble(),
         releaseDate: json['release_date'],
+        isAdult: json['adult'],
       );
 }

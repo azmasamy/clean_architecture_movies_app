@@ -3,6 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:clean_architecture_movies_app/core/constants/api_constants.dart';
 import 'package:clean_architecture_movies_app/movies/domain/entities/movie.dart';
+import 'package:clean_architecture_movies_app/movies/presentation/screens/movie_detail_screen.dart';
 import 'package:flutter/material.dart';
 
 class MoviesCarousel extends StatelessWidget {
@@ -24,7 +25,11 @@ class MoviesCarousel extends StatelessWidget {
             return GestureDetector(
               key: const Key('openMovieMinimalDetail'),
               onTap: () {
-                /// TODO : NAVIGATE TO MOVIE DETAILS
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => MovieDetailScreen(movieId: movie.id),
+                    ));
               },
               child: Stack(
                 children: [
@@ -48,7 +53,7 @@ class MoviesCarousel extends StatelessWidget {
                     blendMode: BlendMode.dstIn,
                     child: CachedNetworkImage(
                       height: 560.0,
-                      imageUrl: apiImagesBaseUrl + movie.backdropPath,
+                      imageUrl: apiImagesBaseUrl + movie.backdropPath!,
                       fit: BoxFit.cover,
                     ),
                   ),

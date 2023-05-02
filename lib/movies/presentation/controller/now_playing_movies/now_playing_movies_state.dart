@@ -13,9 +13,15 @@ class NowPlayingMoviesSuccess extends NowPlayingMoviesState {
   final List<Movie> nowPlayingMovies;
 
   const NowPlayingMoviesSuccess({required this.nowPlayingMovies});
+
+        @override
+  List<Object> get props => [nowPlayingMovies];
 }
 
 class NowPlayingMoviesError extends NowPlayingMoviesState {
   final GeneralError remoteDatasourceError;
   const NowPlayingMoviesError({required this.remoteDatasourceError});
+
+      @override
+  List<Object> get props => [remoteDatasourceError];
 }

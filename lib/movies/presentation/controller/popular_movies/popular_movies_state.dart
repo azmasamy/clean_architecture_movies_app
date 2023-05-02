@@ -15,9 +15,15 @@ class PopularMoviesSuccess extends PopularMoviesState {
   final List<Movie> popularMovies;
 
   const PopularMoviesSuccess({required this.popularMovies});
+
+  @override
+  List<Object> get props => [popularMovies];
 }
 
 class PopularMoviesError extends PopularMoviesState {
   final GeneralError remoteDatasourceError;
   const PopularMoviesError({required this.remoteDatasourceError});
+
+  @override
+  List<Object> get props => [remoteDatasourceError];
 }

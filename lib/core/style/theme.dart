@@ -31,6 +31,7 @@ IconThemeData iconThemeData =
     const IconThemeData(color: ColorConstants.kSecondaryColor);
 
 AppBarTheme appBarTheme = const AppBarTheme(
+    iconTheme: IconThemeData(color: Colors.white),
     centerTitle: false,
     elevation: 0,
     backgroundColor: ColorConstants.kTransparentColor);

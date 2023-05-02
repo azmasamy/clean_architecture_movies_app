@@ -13,9 +13,15 @@ class TopRatedMoviesSuccess extends TopRatedMoviesState {
   final List<Movie> topRatedMovies;
 
   const TopRatedMoviesSuccess({required this.topRatedMovies});
+
+              @override
+  List<Object> get props => [topRatedMovies];
 }
 
 class TopRatedMoviesError extends TopRatedMoviesState {
   final GeneralError remoteDatasourceError;
   const TopRatedMoviesError({required this.remoteDatasourceError});
+
+              @override
+  List<Object> get props => [remoteDatasourceError];
 }
