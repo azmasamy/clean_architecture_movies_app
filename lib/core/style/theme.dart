@@ -6,6 +6,7 @@ ThemeData lightThemeData(BuildContext context) {
       primaryColor: ColorConstants.kPrimaryColor,
       scaffoldBackgroundColor: ColorConstants.kPrimaryBackgroundColor,
       appBarTheme: appBarTheme,
+      progressIndicatorTheme: progressIndicatorThemeData,
       iconTheme: iconThemeData,
       textTheme: textTheme,
       colorScheme: colorScheme,
@@ -26,6 +27,10 @@ ThemeData lightThemeData(BuildContext context) {
           mainAxisMargin: 20,
           crossAxisMargin: 3));
 }
+
+ProgressIndicatorThemeData progressIndicatorThemeData =
+    const ProgressIndicatorThemeData(
+        color: ColorConstants.kSecondaryColorAccent);
 
 IconThemeData iconThemeData =
     const IconThemeData(color: ColorConstants.kSecondaryColor);
